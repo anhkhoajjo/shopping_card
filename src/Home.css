@@ -1,0 +1,121 @@
+.content {
+    display: flex;
+    justify-items: center;
+    height: 100vh;
+    width: 800px;
+    max-width: 100%;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.card {
+    display: flex;
+    width: 360px;
+    height: 600px;
+    background: white;
+    border-radius: 5%;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    top: -30%;
+    left: -30%;
+    background-color: yellow;
+    position: absolute;
+}
+
+
+.cardBody {
+    width: 300px;
+    position: relative;
+    height: 100%;
+    margin: 30px;
+    overflow-y: scroll;
+    align-items: center;
+}
+
+.cardBody::-webkit-scrollbar{
+    display: none;
+}
+
+.cardBody img{
+    width: 100%;
+    transform: rotate(-20deg);
+
+}
+
+.cardLogo {
+    margin: 30px;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+.cardTitle {
+    margin-left: 30px;
+    z-index: 1  ;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.cardLogo img {
+    width: 60px;
+    overflow-clip-margin: padding-box;
+    overflow: clip;
+}
+
+.item{
+    margin-right: 40px;
+    margin-bottom: 30px;
+}
+
+.item img{
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+}
+
+.itemName{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.itemBottom{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemPrice{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.addButton{
+    background-color: yellow;
+    color: #282c34;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+
+
+}
+
+body {
+    background: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
