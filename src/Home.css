@@ -1,8 +1,22 @@
+:root {
+    --white: #FFFFFF;
+    --black: #303841;
+    --gray: #777777;
+    --yellow: #F6C90E
+}
+
+body {
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .content {
     display: flex;
     justify-items: center;
     height: 100vh;
-    width: 800px;
+    width: 740px;
     max-width: 100%;
     justify-content: space-between;
     position: relative;
@@ -20,6 +34,8 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+
 }
 
 .card::before {
@@ -30,7 +46,7 @@
     border-radius: 100%;
     top: -30%;
     left: -30%;
-    background-color: yellow;
+    background-color: var(--yellow);
     position: absolute;
 }
 
@@ -44,11 +60,11 @@
     align-items: center;
 }
 
-.cardBody::-webkit-scrollbar{
+.cardBody::-webkit-scrollbar {
     display: none;
 }
 
-.cardBody img{
+.cardBody img {
     width: 100%;
     transform: rotate(-20deg);
 
@@ -61,11 +77,16 @@
     z-index: 0;
 }
 
-.cardTitle {
+.cardHeader {
     margin-left: 30px;
-    z-index: 1  ;
-    font-size: 36px;
+    width: 300px;
+    z-index: 1;
+    font-size: 25px;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
 }
 
 .cardLogo img {
@@ -74,21 +95,34 @@
     overflow: clip;
 }
 
-.item{
-    margin-right: 40px;
+.item {
     margin-bottom: 30px;
 }
 
-.item img{
-    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+.item img {
+    filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
 }
 
-.itemName{
+.itemImage{
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 360px;
+    margin-bottom: 20px;
+}
+
+.itemName {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 30px;
+}
+.itemDescription{
+    margin-bottom: 30px;
+    color: var(--gray);
 }
 
-.itemBottom{
+.itemBottom {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -96,26 +130,123 @@
     align-items: center;
 }
 
-.itemPrice{
-    font-size: 25px;
+.itemPrice {
+    font-size: 20px;
     font-weight: bold;
 }
 
-.addButton{
-    background-color: yellow;
+.addButton {
+    background-color: var(--yellow);
     color: #282c34;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 20px;
     border-radius: 30px;
     padding: 10px 20px;
     border: none;
 
-
 }
 
-body {
-    background: #61dafb;
+.cardRight .cardBody{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+.waitingItem{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    min-height: 140px;
+}
+.waitingItem .containerImage:before{
+    content: "";
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: var(--yellow);
+    position: absolute;
+}
+
+.waitingItem .containerImage{
+    width: 120px;
+    box-sizing: border-box;
+}
+
+.waitingItem img{
+    z-index: 1;
+    width: 140px;
+    transform: translateX(-20px) translateY(-30px) rotate(-20deg);
+}
+.detail{
+    width: 100%;
+}
+
+.detail .name{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.detail .price{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bottomAction{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.roundButton{
+    width: 25px;
+    height: 25px;
+    /*background-color: lightgray;*/
+    border-radius: 100%;
+    border: none;
+}
+
+.roundButton img{
+    width: 100%;
+    transform: rotate(0) !important;
+}
+
+.delete .roundButton{
+    background-color: var(--yellow);
+}
+
+.fitToTop{
+    display: flex;
+    align-items: flex-start;
+}
+
+.checkedButton{
+    width: 40px;
+    height: 40px;
+    background-color: var(--yellow);
+    border-radius: 100%;
+    border: none;
+}
+
+.checkedButton img{
+    transform: scale(70%) rotate(0);
+}
+
+.buttonEffect:hover{
+    cursor: pointer;
+    /*box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;*/
+    transition: .2s;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+    filter: brightness(90%);
 }
