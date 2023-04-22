@@ -255,7 +255,8 @@ body {
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
-    min-height: 140px;
+    height: 130px;
+    /*min-height: 140px;*/
 }
 
 /*.waitingItem .containerImage:before{*/

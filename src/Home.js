@@ -154,18 +154,15 @@ function Home() {
                 <div className={"cardBody fitToTop"}>
 
                     <TransitionGroup>
-                            <div className={"cardRightPlaceHolder"}
-                            style={{display: waitingShoes.length <= 0 || "none"}}>Your cart is empty</div>
+                        <div className={"cardRightPlaceHolder"}
+                             style={{display: waitingShoes.length <= 0 || "none"}}>Your cart is empty
+                        </div>
                         {waitingShoes.map((shoe, index) => (
                             <CSSTransition
                                 key={shoe.id}
                                 in={!waitingShoes.includes(shoe)}
                                 timeout={700}
                                 classNames="waitingItem"
-                                // unmountOnExit
-                                // onEnter={() => setShowButton(false)}
-                                // onExited={() => (true)}
-                                // appear={true}
                             >
                                 {
                                     <div key={index}
