@@ -1,6 +1,7 @@
 # This project using reactjs with html/css
 
-Just install nodejs => go into project => turn on cmd and using 'npm start'
+Set up enviroment for project:  install nodejs
+Then go into project => turn on cmd and using script `npm start`
 
 ## Available Scripts
 
