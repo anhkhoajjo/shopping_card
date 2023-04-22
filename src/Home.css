@@ -1,3 +1,93 @@
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* hebrew */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nMrXyi0A.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* hebrew */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');
+    unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/rubik/v26/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root {
     --white: #FFFFFF;
     --black: #303841;
@@ -5,7 +95,10 @@
     --yellow: #F6C90E
 }
 
+
 body {
+    color: var(--black);
+    font-family: Rubik, sans-serif;
     background: #FFFFFF;
     display: flex;
     justify-content: center;
@@ -15,13 +108,15 @@ body {
 .content {
     display: flex;
     justify-items: center;
+    align-items: center;
     height: 100vh;
     width: 740px;
-    max-width: 100%;
+    /*max-width: 100%;*/
     justify-content: space-between;
     position: relative;
-    align-items: center;
     padding: 0 10px;
+    flex-wrap: wrap;
+
 }
 
 .card {
@@ -42,10 +137,10 @@ body {
     content: "";
     display: flex;
     width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    top: -30%;
-    left: -30%;
+    height: 500px;
+    border-radius: 80%;
+    top: -50%;
+    left: -35%;
     background-color: var(--yellow);
     position: absolute;
 }
@@ -103,7 +198,7 @@ body {
     filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
 }
 
-.itemImage{
+.itemImage {
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -117,7 +212,8 @@ body {
     font-weight: bold;
     margin-bottom: 30px;
 }
-.itemDescription{
+
+.itemDescription {
     margin-bottom: 30px;
     color: var(--gray);
 }
@@ -146,17 +242,19 @@ body {
 
 }
 
-.cardRight .cardBody{
+.cardRight .cardBody {
     display: flex;
     flex-direction: column;
 }
-.waitingItem{
+
+.waitingItem {
     display: flex;
     width: 100%;
     justify-content: space-between;
     flex-direction: row;
     min-height: 140px;
 }
+
 /*.waitingItem .containerImage:before{*/
 /*    content: "";*/
 /*    display: flex;*/
@@ -167,7 +265,7 @@ body {
 /*    position: absolute;*/
 /*}*/
 
-.circleBackground{
+.circleBackground {
     display: flex;
     width: 100px;
     height: 100px;
@@ -176,46 +274,47 @@ body {
     position: absolute;
 }
 
-.waitingItem .containerImage{
+.waitingItem .containerImage {
     width: 120px;
     box-sizing: border-box;
 }
 
-.waitingItem img{
+.waitingItem img {
     z-index: 1;
     width: 140px;
-    transform: translateX(-20px) translateY(-30px) rotate(-20deg);
+    transform: translateX(-20px) translateY(-50px) rotate(-20deg);
 }
-.detail{
+
+.detail {
     width: 100%;
 }
 
-.detail .name{
+.detail .name {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.detail .price{
+.detail .price {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.bottomAction{
+.bottomAction {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.quantity{
+.quantity {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100px;
 }
 
-.roundButton{
+.roundButton {
     width: 25px;
     height: 25px;
     /*background-color: lightgray;*/
@@ -223,21 +322,21 @@ body {
     border: none;
 }
 
-.roundButton img{
+.roundButton img {
     width: 100%;
     transform: rotate(0) !important;
 }
 
-.delete .roundButton{
+.delete .roundButton {
     background-color: var(--yellow);
 }
 
-.fitToTop{
+.fitToTop {
     display: flex;
     align-items: flex-start;
 }
 
-.checkedButton{
+.checkedButton {
     width: 40px;
     height: 40px;
     background-color: var(--yellow);
@@ -245,11 +344,11 @@ body {
     border: none;
 }
 
-.checkedButton img{
+.checkedButton img {
     transform: scale(70%) rotate(0);
 }
 
-.buttonEffect:hover{
+.buttonEffect:hover {
     cursor: pointer;
     /*box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;*/
     transition: .2s;
@@ -260,36 +359,66 @@ body {
     filter: brightness(90%);
 }
 
-.mountedAnimation{
+.mountedAnimation {
     transform: translateY(15px);
     transition: opacity 2s ease, transform 2s ease;
 }
-.unmountedAnimation{
+
+.unmountedAnimation {
     transform: translateY(0);
 }
 
-.waitingItem-enter{
+.waitingItem-enter {
     opacity: 0;
 }
 
-.waitingItem-enter-active{
+.waitingItem-enter-active {
     opacity: 1;
     transition: opacity 500ms ease-in;
 }
 
-
-/*.waitingItem-enter-exist{*/
-/*    opacity: 1;*/
-/*}*/
-.waitingItem-exit{
+.waitingItem-exit {
     opacity: 1;
 }
-.waitingItem-exit-active{
+
+.waitingItem-exit-active {
     opacity: 0;
     transition: opacity 300ms ease-in-out;
     /*transition: 2s cubic-bezier(.79,.01,.22,1);*/
 }
 
-/*.waitingItem-enter-exist-done{*/
-/*    opacity: 0;*/
-/*}*/
+.content:before {
+    content: "";
+    left: -20%;
+    bottom: -30%;
+    width: 500%;
+    height: 100%;
+    background-color: #F6C90E;
+    /*display: block;*/
+    position: fixed;
+    overflow: visible;
+    border-radius: 82% 18% 100% 0% / 52% 13% 87% 48%;
+    animation: backgroundAnimation ease-in-out 5s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100px);
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .content{
+        height: auto;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .card{
+        margin-bottom: 10px;
+    }
+    
+}

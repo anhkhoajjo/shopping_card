@@ -31,11 +31,11 @@ function Home() {
 
 
     useEffect(() => {
-        // handleAddButton()
+        setWaitingShoes(JSON.parse(localStorage.getItem("waitingShoes")))
+        setAddedIdShoes(JSON.parse(localStorage.getItem("addedIdShoes")))
+
     }, []);
 
-    console.log("to count num render")
-    console.log(waitingShoes)
 
     function handleAmount() {
         if (waitingShoes) {
@@ -48,14 +48,10 @@ function Home() {
     }
 
     useEffect(() => {
-        console.log("length waiting shoe:")
-        console.log("length waiting shoe:", waitingShoes.length)
         if (waitingShoes) {
             let amount = 0
             for (let i = 0, l = waitingShoes.length; i < l; i++) {
-                console.log("quantity: ", waitingShoes[i].quantity)
                 if (waitingShoes[i].quantity <= 0) {
-                    console.log(waitingShoes[i])
                     const deleteItem = waitingShoes[i].id
                     setWaitingShoes(prev => prev.filter(item => item.id !== deleteItem))
                 }
@@ -63,7 +59,8 @@ function Home() {
             }
             setAmount(amount)
         }
-        console.log("dang o effect", waitingShoes)
+        localStorage.setItem("waitingShoes", JSON.stringify(waitingShoes))
+        localStorage.setItem("addedIdShoes", JSON.stringify(addedIdShoes))
 
     }, [waitingShoes, rerender]);
 
@@ -73,20 +70,13 @@ function Home() {
         const newItem = itemm
         newItem.quantity = 1
         newItem.totalAmount = newItem.price * newItem.quantity
-        // console.log(waitingShoes.reduce((prev,cur)=>prev.totalAmount + cur.totalAmount,0))
-        // console.log(waitingShoes.reduce((prev,cur)=>prev.totalAmount + cur.totalAmount,0))
         setWaitingShoes(prevState => ([...prevState, newItem]))
     }
 
 
     function handleDeleteItem(shoe) {
-        console.log("shoe:", shoe)
-        console.log("truoc khi xoa")
-        console.log(waitingShoes)
         setWaitingShoes(prevState => prevState.filter(item => item !== shoe))
         setAddedIdShoes(prevState => prevState.filter(item => item !== shoe.id))
-        console.log("dang xoa")
-        console.log(waitingShoes)
         setRerender(prevState => !prevState)
     }
 
@@ -110,7 +100,6 @@ function Home() {
             if (newItem.quantity <= 0) {
                 setRerender(prevState => !prevState)//dang test
                 handleDeleteItem(shoe)
-                console.log("chuan bi xoa nha")
             }
             return prevState
         })
@@ -164,6 +153,8 @@ function Home() {
                 <div className={"cardBody fitToTop"}>
 
                     <TransitionGroup>
+                            <div className={"cardRightPlaceHolder"}
+                            style={{display: waitingShoes.length <= 0 || "none"}}>Your cart is empty</div>
                         {waitingShoes.map((shoe, index) => (
                             <CSSTransition
                                 key={shoe.id}
