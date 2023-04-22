@@ -157,8 +157,17 @@ body {
     flex-direction: row;
     min-height: 140px;
 }
-.waitingItem .containerImage:before{
-    content: "";
+/*.waitingItem .containerImage:before{*/
+/*    content: "";*/
+/*    display: flex;*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    border-radius: 100%;*/
+/*    background-color: var(--yellow);*/
+/*    position: absolute;*/
+/*}*/
+
+.circleBackground{
     display: flex;
     width: 100px;
     height: 100px;
@@ -250,3 +259,37 @@ body {
     transition-property: all;
     filter: brightness(90%);
 }
+
+.mountedAnimation{
+    transform: translateY(15px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+.unmountedAnimation{
+    transform: translateY(0);
+}
+
+.waitingItem-enter{
+    opacity: 0;
+}
+
+.waitingItem-enter-active{
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+
+/*.waitingItem-enter-exist{*/
+/*    opacity: 1;*/
+/*}*/
+.waitingItem-exit{
+    opacity: 1;
+}
+.waitingItem-exit-active{
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+    /*transition: 2s cubic-bezier(.79,.01,.22,1);*/
+}
+
+/*.waitingItem-enter-exist-done{*/
+/*    opacity: 0;*/
+/*}*/

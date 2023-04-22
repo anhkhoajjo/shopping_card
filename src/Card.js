@@ -2,6 +2,8 @@ import './Home.css'
 
 
 function Card() {
+
+
     return (
         <div className={"card"}>
             <div className={"cardLogo"}>
@@ -18,5 +20,7 @@ function Card() {
 
     );
 }
+
+
 
 export default Card;
