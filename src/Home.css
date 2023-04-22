@@ -105,6 +105,9 @@ body {
     align-items: center;
 }
 
+.cardBody.fitToTop ~ div{
+    width: 100%;
+}
 .content {
     display: flex;
     justify-items: center;
@@ -304,7 +307,8 @@ body {
 .bottomAction {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .quantity {
@@ -325,6 +329,10 @@ body {
 .roundButton img {
     width: 100%;
     transform: rotate(0) !important;
+}
+
+.delete{
+    /*width: 40%;*/
 }
 
 .delete .roundButton {
