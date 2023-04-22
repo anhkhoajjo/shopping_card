@@ -130,9 +130,17 @@ function Home() {
                             </div>
                             <div className={"itemBottom"}>
                                 <div className={"itemPrice"}>{formatter.format(shoe.price)}</div>
-                                {!addedIdShoes.includes(shoe.id) &&
+                                <CSSTransition
+                                    in={!addedIdShoes.includes(shoe.id)}
+                                    timeout={500}
+                                    classNames="addSneakerButton"
+
+                                    unmountOnExit
+                                >
+                                {(!addedIdShoes.includes(shoe.id) || true) &&
                                     <button id={shoe.id} className={"addButton buttonEffect"}
                                             onClick={() => handleAddButton(shoe)}> add to cart</button>}
+                                </CSSTransition>
                                 {addedIdShoes.includes(shoe.id) && <button id={shoe.id} className={"checkedButton"}>
                                     <img src={require("./asset/check.png")} alt=""/>
                                 </button>}

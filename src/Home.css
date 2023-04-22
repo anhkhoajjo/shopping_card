@@ -105,9 +105,10 @@ body {
     align-items: center;
 }
 
-.cardBody.fitToTop > div{
+.cardBody.fitToTop > div {
     width: 100%;
 }
+
 .content {
     display: flex;
     justify-items: center;
@@ -148,14 +149,17 @@ body {
     position: absolute;
 }
 
-
+.cardLeft .cardBody{
+    overflow-x: hidden;
+}
 .cardBody {
     width: 300px;
     position: relative;
     height: 100%;
-    margin: 30px;
     overflow-y: scroll;
     align-items: center;
+    margin-left: 30px;
+    box-sizing: border-box;
 }
 
 .cardBody::-webkit-scrollbar {
@@ -185,6 +189,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding-right: 20px;
+    margin-bottom: 20px;
 }
 
 .cardLogo img {
@@ -332,7 +337,7 @@ body {
     transform: rotate(0) !important;
 }
 
-.delete{
+.delete {
     /*width: 40%;*/
 }
 
@@ -377,13 +382,32 @@ body {
     transform: translateY(0);
 }
 
+.addSneakerButton-enter {
+    opacity: 0;
+}
+
+.addSneakerButton-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.addSneakerButton-exit {
+    opacity: 1;
+}
+
+.addSneakerButton-exit-active {
+    opacity: 0;
+    transition: 500ms ease-out;
+    transform: translateX(110%);
+}
+
 .waitingItem-enter {
     opacity: 0;
 }
 
 .waitingItem-enter-active {
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 150ms ease-in;
 }
 
 .waitingItem-exit {
@@ -392,8 +416,7 @@ body {
 
 .waitingItem-exit-active {
     opacity: 0;
-    transition: opacity 300ms ease-in-out;
-    /*transition: 2s cubic-bezier(.79,.01,.22,1);*/
+    transition: opacity 150ms ease-in-out;
 }
 
 .content:before {
@@ -421,13 +444,14 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .content{
+    .content {
         height: auto;
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .card{
+
+    .card {
         margin-bottom: 10px;
     }
-    
+
 }
